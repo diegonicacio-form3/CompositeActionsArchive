@@ -12,10 +12,10 @@ outputs:
 runs:
   using: "composite"
   steps: 
-    - run: ${{ github.action_path }}/ExecuteSomething.sh
+    - run: $GITHUB_ACTION_PATH/ExecuteSomething.sh
       shell: bash
     - id: random-number-generator
       run: echo "::set-output name=filesNo::$(echo $RANDOM)"
       shell: bash
-    - run: ${{ github.action_path }}/CopyFiles.sh
+    - run: $GITHUB_ACTION_PATH/CopyFiles.sh
       shell: bash
